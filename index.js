@@ -1,6 +1,6 @@
 var URL = require('url');
 
-function unless(middleware, options) {
+function proceed(middleware, options) {
   if (typeof options === 'undefined') {
     options = middleware;
     middleware = this;
@@ -42,14 +42,14 @@ function unless(middleware, options) {
       skip = skip || methods.indexOf(req.method) > -1;
     }
 
-    if (skip) {
+    if (!skip) {
       return next();
     }
 
     middleware(req, res, next);
   };
 
-  result.unless = unless;
+  result.proceed = proceed;
 
   return result;
 }
@@ -81,4 +81,4 @@ function isMethodMatch(methods, m) {
   return methods.indexOf(m) > -1;
 }
 
-module.exports = unless;
+module.exports = proceed;

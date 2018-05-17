@@ -1,3 +1,13 @@
+express-proceed
+===============
+
+> Do the opposite of express-unless. Proceed only when a condition is met.
+
+<br><br>
+
+Readme from source repository
+-----------------------------
+
 Conditionally skip a middleware when a condition is met.
 
 ## Install
