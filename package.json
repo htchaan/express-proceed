@@ -1,7 +1,7 @@
 {
   "name": "express-proceed",
-  "description": "Conditionally add a middleware to express with some common patterns.",
-  "version": "0.0.0",
+  "description": "Do the opposite of express-unless. Proceed only when a condition is met.",
+  "version": "0.1.0",
   "license": "MIT",
   "repository": {
     "url": "htchaan/express-proceed"
@@ -22,5 +22,14 @@
   "devDependencies": {
     "mocha": "~1.11.0",
     "chai": "~1.7.0"
-  }
+  },
+  "keywords": [
+    "web",
+    "app",
+    "express",
+    "expressjs",
+    "middleware",
+    "unless",
+    "proceed"
+  ]
 }
