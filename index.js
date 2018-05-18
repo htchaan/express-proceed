@@ -9,7 +9,7 @@ function proceed(middleware, options) {
   var opts = typeof options === 'function' ? {custom: options} : options;
   opts.useOriginalUrl = (typeof opts.useOriginalUrl === 'undefined') ? true : opts.useOriginalUrl;
 
-  const result = function (req, res, next) {
+  const expressProceed = function (req, res, next) {
     var url = URL.parse((opts.useOriginalUrl ? req.originalUrl : req.url) || req.url || '', true);
 
     var skip = false;
@@ -49,9 +49,9 @@ function proceed(middleware, options) {
     middleware(req, res, next);
   };
 
-  result.proceed = proceed;
+  expressProceed.proceed = proceed;
 
-  return result;
+  return expressProceed;
 }
 
 function oneOrMany(elementOrArray) {
